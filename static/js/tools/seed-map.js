@@ -17,6 +17,7 @@
   var detailEl = document.getElementById('smDetail');
   var detailClose = document.getElementById('smDetailClose');
   var copyBtn = document.getElementById('smCopy');
+  var shareBtn = document.getElementById('smShare');
 
   var st = URLState.read();
   if (seedInput) seedInput.value = st.seed || '12345';
@@ -251,6 +252,20 @@
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(coords).then(function () { done(true); }, function () { done(false); });
+      } else {
+        done(false);
+      }
+    });
+  }
+  if (shareBtn) {
+    shareBtn.addEventListener('click', function () {
+      var url = window.location.href.split('#')[0] + '#' + location.hash.replace(/^#/, '');
+      function done(ok) {
+        shareBtn.textContent = ok ? 'Link copied!' : url;
+        setTimeout(function () { shareBtn.textContent = 'Copy share link'; }, 1800);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { done(true); }, function () { done(false); });
       } else {
         done(false);
       }

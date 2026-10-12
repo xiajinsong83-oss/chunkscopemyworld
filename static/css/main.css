@@ -333,3 +333,5 @@ footer a:hover{color:#fff}
 .sf-summary{font-size:14px;font-weight:800;color:var(--ink);padding:2px 2px 4px}
 a.sf-copy{text-decoration:none;color:var(--ink)}
 a.sf-copy:hover{border-color:var(--green);color:var(--green);background:#f2faf2}
+.share-bar{margin:0 0 12px}
+.share-bar button.run.small{display:inline-flex;align-items:center;gap:6px}

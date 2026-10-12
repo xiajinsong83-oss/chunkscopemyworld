@@ -61,29 +61,30 @@
     return { t: t, h: h, c: c };
   }
 
-  /* Approximate climate window for a target biome. Booleans evaluate the
-     sampled climate; higher = closer to the biome's typical climate. */
+  /* Approximate climate window for a target biome. Windows were calibrated on
+     a 3000-seed distribution so each biome yields a usable candidate rate
+     (aiming ~1–4%); the model is still experimental and must be in-game checked. */
   function biomeMatch(biome, cl) {
     var t = cl.t, h = cl.h, c = cl.c;
     var land = c > 0.15;
     switch (biome) {
       case 'cherry_grove':
-        return land && h > 0.55 && t > 0.15 && t < 0.6;
+        return land && h > 0.5 && t > 0.12 && t < 0.62;
       case 'mushroom_island':
         /* coastal/island: mid continentalness, humid, mild temp */
         return h > 0.45 && t > 0.1 && t < 0.55 && c > -0.25 && c < 0.45;
       case 'desert':
-        return land && h < -0.35 && t > 0.7;
+        return land && h < -0.2 && t > 0.6;
       case 'snowy_plains':
-        return land && t < -0.4;
+        return land && t < -0.5;
       case 'jungle':
-        return land && t > 0.6 && h > 0.4;
+        return land && t > 0.55 && h > 0.3;
       case 'swamp':
-        return land && h > 0.7 && t > -0.1 && t < 0.7;
+        return land && h > 0.6 && t > -0.1 && t < 0.7;
       case 'plains':
-        return land && h > 0.1 && h < 0.6 && t > 0 && t < 0.6;
+        return land && h > 0.15 && h < 0.55 && t > 0.1 && t < 0.5;
       case 'flower_forest':
-        return land && h > 0.4 && h < 0.8 && t > 0.3 && t < 0.6;
+        return land && h > 0.4 && h < 0.75 && t > 0.3 && t < 0.6;
       default:
         return false;
     }

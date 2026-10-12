@@ -30,6 +30,7 @@ The Seed Map is ChunkScope's flagship tool. Enter any seed to see **every struct
     <label class="chip"><input type="checkbox" data-layer="spawn"> Spawn chunks</label>
     <label class="chip"><input type="checkbox" data-layer="grid"> Grid</label>
   </div>
+  <div class="share-bar"><button class="run small" type="button" id="smShare">Copy share link</button></div>
   <div class="map-wrap">
     <canvas id="seedMap" aria-label="Seed map"></canvas>
     <div class="sm-detail" id="smDetail" role="dialog" aria-label="Structure details">
