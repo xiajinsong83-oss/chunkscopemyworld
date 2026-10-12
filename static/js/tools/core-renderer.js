@@ -23,6 +23,7 @@
     this.onViewChange = opts.onViewChange || function () {};
     this.onStats = opts.onStats || function () {};
     this.dpr = (typeof window.devicePixelRatio !== 'undefined' ? window.devicePixelRatio : 1) || 1;
+    this.gridOn = (opts.gridOn === undefined ? true : opts.gridOn);
     this._vt = null;
     this._pt = null;
     this._pinch = null;
@@ -165,7 +166,7 @@
     var ctx = this.ctx;
     ctx.clearRect(0, 0, this.cw, this.ch);
     this.onDraw(this);
-    this._drawGrid();
+    if (this.gridOn) this._drawGrid();
   };
 
   ChunkMapRenderer.prototype._drawGrid = function () {

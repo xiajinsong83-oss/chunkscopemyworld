@@ -290,3 +290,16 @@ footer a:hover{color:#fff}
 .lg-spawn{background:#ff5252}
 .lg-plain{background:rgba(35,48,35,.85);border:1px solid var(--line)}
 .tool-hint{background:#fff7e6;border:1px dashed #d97706;border-radius:9px;padding:10px 14px;font-size:13px;color:#5b4a26;margin-top:10px}
+
+/* seed map layers + detail */
+.layer-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.layer-bar .chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:700;cursor:pointer;color:var(--ink)}
+.layer-bar .chip input{width:auto;margin:0;accent-color:var(--green)}
+.lg-struct{background:linear-gradient(135deg,#ffd166,#b0bec5);border:1px solid var(--line)}
+.sm-detail{position:absolute;top:12px;right:12px;background:#16231a;border:1px solid var(--line);border-radius:12px;padding:14px 16px;width:min(280px,calc(100% - 40px));display:none;z-index:5;color:#fff;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.sm-detail.show{display:block}
+.sm-detail .sm-close{position:absolute;top:6px;right:10px;background:none;border:0;color:#9fb3a5;font-size:20px;line-height:1;cursor:pointer}
+.sm-detail .sm-name{font-weight:800;font-size:16px;margin-bottom:4px;color:#7ee787}
+.sm-detail .sm-coords{font-size:13px;color:#dfe9e0;word-break:break-all}
+.sm-detail .sm-dist{font-size:12.5px;color:#9fb3a5;margin:6px 0 10px}
+.tool-ui button.run.small{padding:7px 14px;font-size:13px;margin:0}
