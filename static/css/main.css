@@ -303,3 +303,16 @@ footer a:hover{color:#fff}
 .sm-detail .sm-coords{font-size:13px;color:#dfe9e0;word-break:break-all}
 .sm-detail .sm-dist{font-size:12.5px;color:#9fb3a5;margin:6px 0 10px}
 .tool-ui button.run.small{padding:7px 14px;font-size:13px;margin:0}
+
+/* ore finder */
+.ore-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.ore-chips{display:flex;gap:7px;flex-wrap:wrap}
+.ore-chip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font:inherit;font-weight:800;font-size:13px;cursor:pointer;color:var(--ink);transition:.12s}
+.ore-chip::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--oc);flex:0 0 auto}
+.ore-chip.active{border-color:var(--oc);background:#f2faf2}
+.ore-info{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:12px;font-size:14px}
+.ore-info .ore-head{display:flex;align-items:center;gap:8px;font-size:16px;margin-bottom:6px}
+.ore-swatch{width:14px;height:14px;border-radius:3px;flex:0 0 auto}
+.ore-biome{font-size:11.5px;font-weight:800;color:#fff;background:var(--orange);border-radius:999px;padding:2px 9px}
+.ore-line{font-size:13.5px;color:var(--ink);margin:2px 0}
+.ore-tip{font-size:13px;color:var(--muted);margin-top:8px;border-top:1px dashed var(--line);padding-top:8px}
