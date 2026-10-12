@@ -14,4 +14,4 @@ ChunkScope is a free collection of Minecraft tools and guides — seed maps, str
 
 ## Contact
 
-Questions, corrections or tool requests: **hello@chunkscope.com** — we reply within 48 hours. DMCA takedown notices go to the same address; see the [DMCA page](/legal/dmca/) for requirements.
+Questions, corrections or tool requests: **39918849@qq.com** — we reply within 48 hours. DMCA takedown notices go to the same address; see the [DMCA page](/legal/dmca/) for requirements.

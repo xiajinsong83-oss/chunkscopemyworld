@@ -8,7 +8,7 @@ ChunkScope respects intellectual property rights and expects users to do the sam
 
 ## Reporting copyrighted content
 
-If you believe content on ChunkScope infringes your copyright, send a notice to **hello@chunkscope.com** including:
+If you believe content on ChunkScope infringes your copyright, send a notice to **39918849@qq.com** including:
 
 1. Identification of the copyrighted work claimed to be infringed.
 2. The exact URL(s) of the allegedly infringing material.

@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="shell">
+  <div class="page-head">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span><span>{{ .Title }}</span>
+    </nav>
+    <h1>{{ .Title | safeHTML }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+  {{ partial "ad.html" (dict "type" "leader") }}
+  {{ if .Content }}<div class="panel">{{ .Content }}</div>{{ end }}
+  <div class="seed-gallery">
+    {{ range .Pages }}
+    {{ if ne .Params.hidden true }}
+    <article class="seed-card">
+      <a class="seed-swatch" href="{{ .RelPermalink }}" aria-label="{{ .Title }}"
+        {{ with .Params.previewColors }}style="background:linear-gradient(135deg,{{ range $i, $c := . }}{{ if $i }},{{ end }}{{ $c }}{{ end }})"{{ end }}>
+        <span class="seed-swatch-tag">{{ with .Params.edition }}{{ . }}{{ end }}</span>
+      </a>
+      <div class="seed-body">
+        <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Description }}</p>
+        <div class="seed-meta">
+          {{ with .Params.seed }}<span class="seed-num">Seed {{ . }}</span>{{ end }}
+          {{ with .Params.tags }}{{ range first 3 . }}<span>{{ . }}</span>{{ end }}{{ end }}
+        </div>
+        <div class="seed-actions">
+          <a class="run small" href="/apps/seed-map/#seed={{ with .Params.seed }}{{ . }}{{ end }}&layers=s">Open in Seed Map</a>
+          <a class="link" href="{{ .RelPermalink }}">Read →</a>
+        </div>
+      </div>
+    </article>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ partial "ad.html" (dict "type" "multiplex") }}
+</div>
+{{ end }}

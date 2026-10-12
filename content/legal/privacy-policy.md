@@ -26,7 +26,7 @@ ChunkScope runs entirely in your browser. We collect **no personal data** unless
 
 ## Your rights
 
-You may request deletion of your newsletter subscription or contact history at any time: **hello@chunkscope.com**. Unsubscribe links are in every newsletter email.
+You may request deletion of your newsletter subscription or contact history at any time: **39918849@qq.com**. Unsubscribe links are in every newsletter email.
 
 ## Children
 

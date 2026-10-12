@@ -34,4 +34,4 @@ We may update these terms at any time. Material changes are announced on this pa
 
 ## 7. Contact
 
-Questions: **hello@chunkscope.com**.
+Questions: **39918849@qq.com**.
