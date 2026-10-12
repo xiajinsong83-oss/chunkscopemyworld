@@ -330,3 +330,6 @@ footer a:hover{color:#fff}
 .sf-empty{color:var(--muted);font-size:14px;padding:12px}
 #sfSelected{margin-top:8px;min-height:20px;font-weight:800}
 #sfSelected.show{color:var(--green)}
+.sf-summary{font-size:14px;font-weight:800;color:var(--ink);padding:2px 2px 4px}
+a.sf-copy{text-decoration:none;color:var(--ink)}
+a.sf-copy:hover{border-color:var(--green);color:var(--green);background:#f2faf2}
