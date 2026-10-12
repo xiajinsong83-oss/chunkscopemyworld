@@ -69,5 +69,9 @@
 {{ end }}
 
 {{ define "scripts" }}
-{{ with .Params.js }}<script src="/js/tools/{{ . }}.js"></script>{{ end }}
+{{ with .Params.js }}
+  {{ if reflect.IsSlice . }}
+    {{ range . }}<script src="/js/tools/{{ . }}.js"></script>{{ end }}
+  {{ else }}<script src="/js/tools/{{ . }}.js"></script>{{ end }}
+{{ end }}
 {{ end }}
