@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.chunkscope.com/sitemap.xml
-Sitemap: https://www.chunkscope.com/sitemap-tools.xml
-Sitemap: https://www.chunkscope.com/sitemap-guides.xml
 Disallow: /cdn/

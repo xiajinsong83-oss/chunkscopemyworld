@@ -15,7 +15,10 @@
       if (i < 0) return;
       var k = pair.slice(0, i).trim();
       var v = pair.slice(i + 1).trim();
-      if (k) out[k] = v;
+      if (k) {
+        try { v = decodeURIComponent(v); } catch (e) { /* keep raw on malformed */ }
+        out[k] = v;
+      }
     });
     return out;
   }

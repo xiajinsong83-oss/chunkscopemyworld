@@ -6,7 +6,7 @@ editions: ["Java", "Bedrock"]
 version: "1.21.5"
 featured: true
 accent: 1
-js: "nether-portal"
+js: "nether-portal-calculator"
 tags: ["Nether", "Coordinates", "Portal"]
 relatedGuides: []
 ---

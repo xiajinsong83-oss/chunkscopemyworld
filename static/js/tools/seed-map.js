@@ -22,12 +22,15 @@
   if (seedInput) seedInput.value = st.seed || '12345';
   var version = (st.ver === 'bedrock') ? 'bedrock' : 'java';
 
+  /* layers: URL value is the SET of enabled layers. Missing param = default all on;
+     empty string = all off (must be distinguished from "no param"). */
+  var _hasLayers = typeof st.layers === 'string';
   var layers = {
-    structures: !(st.layers && st.layers.indexOf('s') < 0),
-    slime: !(st.layers && st.layers.indexOf('m') < 0),
-    spawn: !(st.layers && st.layers.indexOf('p') < 0)
+    structures: _hasLayers ? (st.layers.indexOf('s') >= 0) : true,
+    slime: _hasLayers ? (st.layers.indexOf('m') >= 0) : true,
+    spawn: _hasLayers ? (st.layers.indexOf('p') >= 0) : true
   };
-  var GRID_ON = !(st.layers && st.layers.indexOf('g') < 0);
+  var GRID_ON = _hasLayers ? (st.layers.indexOf('g') >= 0) : true;
 
   var worker = ComputeWorker.create('/js/tools/seed-map-worker.js');
   var loaded = { structures: [], slime: [], byKey: {} };
@@ -185,7 +188,9 @@
       var L = chk.getAttribute('data-layer');
       if (L === 'grid') { window.smap.gridOn = chk.checked; }
       else { layers[L] = chk.checked; }
-      var codes = (layers.structures ? 's' : '') + (layers.slime ? 'm' : '') + (layers.spawn ? 'p' : '') + (chk.getAttribute('data-layer') === 'grid' || GRID_ON || window.smap.gridOn ? 'g' : '');
+      /* codes must reflect the CURRENT toggle state (not the init constant),
+         and an empty string means "all layers off". */
+      var codes = (layers.structures ? 's' : '') + (layers.slime ? 'm' : '') + (layers.spawn ? 'p' : '') + (window.smap.gridOn ? 'g' : '');
       URLState.write({ layers: codes || '' });
       if (L !== 'grid') scheduleLoad();
       window.smap.draw();
