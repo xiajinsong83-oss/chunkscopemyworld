@@ -1,0 +1,13 @@
+# Hugo 构建产物（本地可随时重建）
+public/
+resources/
+
+# Hugo 临时锁文件（每次构建自动生成，禁止上传）
+.hugo_build.lock
+
+# 系统/编辑器文件
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
