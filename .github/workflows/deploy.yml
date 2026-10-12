@@ -24,6 +24,9 @@ jobs:
       - name: Build site
         run: hugo --minify --gc
 
+      - name: Generate focused sitemaps (tools & guides)
+        run: node scripts/gen-sitemaps.js
+
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
