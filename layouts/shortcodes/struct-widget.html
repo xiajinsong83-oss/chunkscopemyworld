@@ -1,0 +1,14 @@
+{{/* struct-widget shortcode — interactive "locate this structure on any seed" widget, used on /structures/<slug>/ pages. Usage: {{< struct-widget id="village" >}} */}}
+<div class="tool-ui struct-widget" data-struct-id="{{ .Get "id" }}">
+  <div class="row">
+    <div>
+      <label for="swSeed{{ .Get "id" | anchorize }}">World seed</label>
+      <input class="sw-seed" type="text" inputmode="text" placeholder="12345 or any text seed" value="12345">
+    </div>
+    <div><label>&nbsp;</label><button class="run" type="button" data-run="sw">Locate structure</button></div>
+  </div>
+  <div class="tool-result sw-result"></div>
+</div>
+<script src="/js/tools/core-java-random.js"></script>
+<script src="/js/tools/core-structures.js"></script>
+<script src="/js/tools/struct-widget.js"></script>

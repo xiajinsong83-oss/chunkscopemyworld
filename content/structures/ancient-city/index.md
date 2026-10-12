@@ -7,6 +7,8 @@ featured: true
 tags: ["Ancient city", "Deep dark", "Warden", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/", "/apps/seed-finder/"]
 ---
+{{< struct-widget id="ancient_city" >}}
+
 The ancient city is the crown of the **deep dark** biome, a sprawling ruin under the surface that holds the game's richest loot — if you can avoid the **warden**. It generates on a **24-chunk spacing** grid, salt `20083232`, in the deep dark below Y ~ -40.
 
 ## Ancient city loot

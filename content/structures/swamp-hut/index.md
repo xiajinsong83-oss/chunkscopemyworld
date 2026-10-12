@@ -7,6 +7,8 @@ featured: true
 tags: ["Swamp hut", "Witch", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="swamp_hut" >}}
+
 The swamp hut is a tiny witch hut in **swamps** with a brewing stand and a black cat. It generates on a **32-chunk spacing** grid, salt `14357620`.
 
 ## Swamp hut loot

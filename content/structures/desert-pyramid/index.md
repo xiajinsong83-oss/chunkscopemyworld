@@ -7,6 +7,8 @@ featured: true
 tags: ["Desert pyramid", "TNT", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="desert_pyramid" >}}
+
 The desert pyramid (temple) is a sandstone structure in **deserts** with a hidden underground treasure room. It generates on a **32-chunk spacing** grid, salt `14357617`.
 
 ## Desert pyramid loot

@@ -7,6 +7,8 @@ featured: true
 tags: ["Pillager outpost", "Raid", "Totem", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="outpost" >}}
+
 The pillager outpost is a wooden watchtower manned by pillagers, topped with a **raid captain** (banner carrier). It generates on a **32-chunk spacing** grid, salt `165745296`.
 
 ## Outpost loot

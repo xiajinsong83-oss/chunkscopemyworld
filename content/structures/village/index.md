@@ -7,6 +7,8 @@ featured: true
 tags: ["Village", "Structures", "Villagers", "Loot"]
 relatedTools: ["/apps/structure-finder/", "/apps/seed-finder/"]
 ---
+{{< struct-widget id="village" >}}
+
 Villages are the most common major structure and your fastest path to food, beds and trading. They generate on a **32-chunk spacing** grid with an 8-chunk minimum separation (salt `10387312`), in plains, desert, savanna, taiga, snowy and jungle variants.
 
 ## Village loot

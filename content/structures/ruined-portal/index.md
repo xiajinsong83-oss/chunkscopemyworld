@@ -7,6 +7,8 @@ featured: true
 tags: ["Ruined portal", "Nether", "Gold", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="ruined_portal" >}}
+
 Ruined nether portals are broken obsidian portal frames found on the surface and underground — the best **gold and obsidian** source early on. They generate on a **40-chunk spacing** grid, salt `34222645`.
 
 ## Ruined portal loot

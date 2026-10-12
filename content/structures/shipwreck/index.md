@@ -7,6 +7,8 @@ featured: true
 tags: ["Shipwreck", "Treasure", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="shipwreck" >}}
+
 Shipwrecks are sunken or beached vessels in oceans and beaches with **buried treasure**. They generate on a **24-chunk spacing** grid, salt `165745295`.
 
 ## Shipwreck loot

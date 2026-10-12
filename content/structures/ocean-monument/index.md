@@ -7,6 +7,8 @@ featured: true
 tags: ["Ocean monument", "Guardians", "Sponge", "Prismarine", "Structures"]
 relatedTools: ["/apps/structure-finder/", "/apps/seed-finder/"]
 ---
+{{< struct-widget id="monument" >}}
+
 The ocean monument is a guardian-guarded structure on the ocean floor — the only renewable source of **sponge** and a mountain of **prismarine**. It generates on a **32-chunk spacing** grid, salt `10387313`, in deep ocean biomes.
 
 ## Monument loot

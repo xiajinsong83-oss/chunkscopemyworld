@@ -7,6 +7,8 @@ featured: true
 tags: ["Trial chambers", "Breeze", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/", "/apps/seed-finder/"]
 ---
+{{< struct-widget id="trial_chambers" >}}
+
 Trial chambers (added in 1.21) are procedural dungeon complexes under the overworld packed with **trial spawners**, **breeze**, and the best repeatable loot in the game. They generate on a **34-chunk spacing** grid, salt `84285879`.
 
 ## Trial chambers loot

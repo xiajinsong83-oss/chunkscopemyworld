@@ -7,6 +7,8 @@ featured: true
 tags: ["Igloo", "Snowy", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="igloo" >}}
+
 The igloo is a small snowy structure — but about half of them hide a **basement** with a brewing stand, a zombie villager and a cure. It generates on a **32-chunk spacing** grid, salt `14357618`.
 
 ## Igloo loot

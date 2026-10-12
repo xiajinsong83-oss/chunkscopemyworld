@@ -7,6 +7,8 @@ featured: true
 tags: ["Woodland mansion", "Evoker", "Totem", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/", "/apps/seed-finder/"]
 ---
+{{< struct-widget id="mansion" >}}
+
 The woodland mansion is the largest structure in the game, a multi-room manor in **dark forests** guarded by evokers and vindicators. It generates on a **80-chunk spacing** grid, salt `10387319`.
 
 ## Mansion loot

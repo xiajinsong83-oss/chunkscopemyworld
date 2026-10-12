@@ -7,6 +7,8 @@ featured: true
 tags: ["Ocean ruin", "Gold", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="ocean_ruin" >}}
+
 Ocean ruins are small stone or sandstone remains in oceans and beaches, in **warm** (sandstone) and **cold** (stone) variants. They generate on a **20-chunk spacing** grid, salt `14357621`.
 
 ## Ocean ruin loot

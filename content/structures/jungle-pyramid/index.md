@@ -7,6 +7,8 @@ featured: true
 tags: ["Jungle pyramid", "Dispenser", "Loot", "Structures"]
 relatedTools: ["/apps/structure-finder/"]
 ---
+{{< struct-widget id="jungle_pyramid" >}}
+
 The jungle pyramid (temple) is a mossy structure in **jungles** with a secret underground room and arrow-dispenser traps. It generates on a **32-chunk spacing** grid, salt `14357619`.
 
 ## Jungle pyramid loot
