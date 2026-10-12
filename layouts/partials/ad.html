@@ -1,13 +1,23 @@
-{{/* Ad placeholder. Usage: {{ partial "ad.html" (dict "type" "leader") }} or shortcode {{< ad "leader" >}} */}}
+{{/* Ad unit. Usage: {{ partial "ad.html" (dict "type" "leader") }} or shortcode {{< ad "leader" >}}
+   Live slots (AdSense): leader=3235785345 auto · inline=8847204670 in-article fluid · multiplex=3356214002 auto.
+   The adsbygoogle loader script is already in head.html — this partial only outputs the <ins> + push. */}}
 {{ $type := .type | default "inline" }}
-{{ $label := "Advertisement" }}
-{{ $size := "" }}
-{{ if eq $type "leader" }}{{ $size = "Google AdSense · 728 × 90 Leaderboard" }}{{ end }}
-{{ if eq $type "inline" }}{{ $size = "Google AdSense · In-article 336 × 280" }}{{ end }}
-{{ if eq $type "multiplex" }}{{ $size = "Google AdSense · Multiplex / Responsive" }}{{ end }}
+{{ $slot := "8847204670" }}
 {{ $cls := "ad ad-inline" }}
-{{ if eq $type "leader" }}{{ $cls = "ad ad-leader" }}{{ end }}
-{{ if eq $type "multiplex" }}{{ $cls = "ad ad-leader2" }}{{ end }}
+{{ $fluid := false }}
+{{ if eq $type "leader" }}
+  {{ $slot = "3235785345" }}{{ $cls = "ad ad-leader" }}
+{{ else if eq $type "multiplex" }}
+  {{ $slot = "3356214002" }}{{ $cls = "ad ad-leader2" }}
+{{ else }}
+  {{ $slot = "8847204670" }}{{ $cls = "ad ad-inline" }}{{ $fluid = true }}
+{{ end }}
 <div class="{{ $cls }}" role="complementary" aria-label="Advertisement">
-  <span>{{ $label }}</span><span class="ad-size">{{ $size }}</span>
+  <span>Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:block;{{ if $fluid }}text-align:center;{{ end }}"
+       data-ad-client="ca-pub-{{ site.Params.adsensePublisher }}"
+       data-ad-slot="{{ $slot }}"
+       {{ if $fluid }}data-ad-layout="in-article" data-ad-format="fluid"{{ else }}data-ad-format="auto" data-full-width-responsive="true"{{ end }}></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
