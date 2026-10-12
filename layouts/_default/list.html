@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="shell">
+  <div class="page-head">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span><span>{{ .Title }}</span>
+    </nav>
+    <h1>{{ .Title | safeHTML }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+  {{ partial "ad.html" (dict "type" "leader") }}
+  {{ if .Content }}<div class="panel">{{ .Content }}</div>{{ end }}
+  <div class="cards appgrid">
+    {{ range .Pages }}
+    {{ if ne .Params.hidden true }}
+    <a class="card tool-card {{ with .Params.accent }}t{{ . }}{{ end }}" href="{{ .RelPermalink }}">
+      <h3>{{ .Title }}</h3>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      <span class="meta">{{ with .Params.tags }}{{ range first 3 . }}<span>{{ . }}</span>{{ end }}{{ end }}</span>
+      <span class="link">Open →</span>
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+  {{ partial "ad.html" (dict "type" "multiplex") }}
+</div>
+{{ end }}

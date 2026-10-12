@@ -1,0 +1,13 @@
+{{/* Ad placeholder. Usage: {{ partial "ad.html" (dict "type" "leader") }} or shortcode {{< ad "leader" >}} */}}
+{{ $type := .type | default "inline" }}
+{{ $label := "Advertisement" }}
+{{ $size := "" }}
+{{ if eq $type "leader" }}{{ $size = "Google AdSense · 728 × 90 Leaderboard" }}{{ end }}
+{{ if eq $type "inline" }}{{ $size = "Google AdSense · In-article 336 × 280" }}{{ end }}
+{{ if eq $type "multiplex" }}{{ $size = "Google AdSense · Multiplex / Responsive" }}{{ end }}
+{{ $cls := "ad ad-inline" }}
+{{ if eq $type "leader" }}{{ $cls = "ad ad-leader" }}{{ end }}
+{{ if eq $type "multiplex" }}{{ $cls = "ad ad-leader2" }}{{ end }}
+<div class="{{ $cls }}" role="complementary" aria-label="Advertisement">
+  <span>{{ $label }}</span><span class="ad-size">{{ $size }}</span>
+</div>

@@ -1,0 +1,38 @@
+baseURL = "https://www.chunkscope.com/"
+title = "ChunkScope — Minecraft Chunk & World Tools, Calculators & Guides"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+enableRobotsTXT = false
+buildDrafts = false
+buildFuture = false
+disableKinds = ["404"]
+
+# Multi-language (Phase 3): add es/pt sections later.
+# [languages.es] ...  [languages.pt] ...
+
+[params]
+  description = "Free Minecraft tools for Java & Bedrock: seed maps, ore finders, farm calculators, redstone simulators, crafting, commands and in-depth guides."
+  author = "ChunkScope"
+  adsensePublisher = "pub-3866829862674413"
+  contactEmail = "hello@chunkscope.com"
+  # Mojang disclaimer shown in footer (mandatory)
+  disclaimer = "This site is not affiliated with Mojang Studios or Microsoft. Minecraft is a trademark of Mojang Studios. All game values and mechanics are factual information."
+  siteEdition = "Java & Bedrock, 1.18+"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]

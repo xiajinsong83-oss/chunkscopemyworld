@@ -1,0 +1,211 @@
+{{ define "main" }}
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="eyebrow">Free tools · Java &amp; Bedrock · 50+ apps</span>
+    <h1>Chunk<b>Scope</b></h1>
+    <p class="sub">Find your world. Calculate your farms. Craft smarter. Free Minecraft tools, calculators and guides — updated for every version.</p>
+    <div class="pills">
+      <span class="pill">Seed Maps</span><span class="pill">Ore Finders</span>
+      <span class="pill">Farm Calculators</span><span class="pill">Redstone Simulators</span>
+      <span class="pill">Crafting &amp; Commands</span>
+    </div>
+    <div class="hero-search">
+      <form id="searchForm" role="search" aria-label="Search tools and guides">
+        <input id="searchInput" type="search" placeholder="Search tools, farms, seeds, guides… e.g. seed map, iron farm" autocomplete="off" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+      <div class="suggest" id="suggest" role="listbox"></div>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+  {{ partial "ad.html" (dict "type" "leader") }}
+
+  <!-- Stats -->
+  <section class="stats" aria-label="ChunkScope in numbers">
+    <div class="stat"><div class="num">50+</div><div class="lbl">Free Apps</div><div class="sub">Finders · Calculators · Creators</div></div>
+    <div class="stat"><div class="num">30+</div><div class="lbl">Structure Finders</div><div class="sub">Villages to Trial Chambers</div></div>
+    <div class="stat"><div class="num">8</div><div class="lbl">Ores Tracked</div><div class="sub">Diamond to Ancient Debris</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">Editions</div><div class="sub">Java &amp; Bedrock, 1.18+</div></div>
+  </section>
+
+  <!-- Tool categories -->
+  <section class="block" id="tools">
+    <div class="block-head"><h2>Tools by category</h2><a class="more" href="/apps/">View all apps →</a></div>
+    <div class="cards cat">
+      <a class="card tool-card" href="/apps/world-finders/">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg></div>
+        <h3>World &amp; Chunk Finders</h3>
+        <p>Seed maps, structure finders, ore locators and biome tools — 30+ apps to explore any seed.</p>
+        <span class="meta"><span>30+ apps</span><span>Seed Map</span><span>Ore Finder</span></span>
+        <span class="link">Browse finders →</span>
+      </a>
+      <a class="card tool-card t2" href="/apps/farm-calculators/">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
+        <h3>Farm &amp; Redstone Calculators</h3>
+        <p>Exclusive calculators: farm output, spawn rates, block counts, item sorters and redstone logic.</p>
+        <span class="meta"><span>Exclusive</span><span>Farm Output</span><span>Redstone</span></span>
+        <span class="link">Calculate →</span>
+      </a>
+      <a class="card tool-card t3" href="/apps/creative-tools/">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 18l9 5 9-5"/></svg></div>
+        <h3>Crafting &amp; Creative Tools</h3>
+        <p>Enchantment calculators, potion builders, banner and shield editors, fireworks and more.</p>
+        <span class="meta"><span>11 apps</span><span>Enchant</span><span>Banners</span></span>
+        <span class="link">Craft →</span>
+      </a>
+      <a class="card tool-card t4" href="/apps/command-tools/">
+        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg></div>
+        <h3>Command &amp; Data Tools</h3>
+        <p>Command generators, /tellraw editors, item IDs, loot tables, NBT and server MOTD builders.</p>
+        <span class="meta"><span>10 apps</span><span>/tellraw</span><span>Loot</span></span>
+        <span class="link">Generate →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Popular tools (featured) -->
+  {{ $featured := where (where site.RegularPages "Section" "apps") ".Params.featured" true }}
+  {{ if $featured }}
+  <section class="block">
+    <div class="block-head"><h2>Popular tools</h2><a class="more" href="/apps/">All 50+ apps →</a></div>
+    <div class="cards tools">
+      {{ range first 6 $featured }}
+      <a class="card tool-card {{ with .Params.accent }}t{{ . }}{{ end }}" href="{{ .RelPermalink }}">
+        <div class="ico">
+          {{ if eq .Params.accent 2 }}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+          {{ else if eq .Params.accent 3 }}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>
+          {{ else }}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>
+          {{ end }}
+        </div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Description }}</p>
+        <span class="meta">{{ with .Params.tags }}{{ range first 3 . }}<span>{{ . }}</span>{{ end }}{{ end }}</span>
+        <span class="link">Open →</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "ad.html" (dict "type" "inline") }}
+
+  <!-- Latest guides -->
+  {{ $guides := where site.RegularPages "Section" "guides" }}
+  {{ if $guides }}
+  <section class="block" id="guides">
+    <div class="block-head"><h2>Latest guides</h2><a class="more" href="/guides/">All guides →</a></div>
+    <div class="cards guides">
+      {{ range first 4 $guides }}
+      <a class="card guide-card" href="{{ .RelPermalink }}">
+        <div class="thumb" style="background-image:url('{{ with .Params.image }}/img/{{ . }}{{ else }}/img/site-bg.jpg{{ end }}')"><span class="v">{{ with .Params.version }}{{ . }}{{ else }}{{ .Params.edition }}{{ end }}</span></div>
+        <div class="body"><h3>{{ .Title }}</h3><p>{{ .Description }}</p><span class="link">Read guide →</span></div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Featured seeds -->
+  {{ $seeds := where (where site.RegularPages "Section" "seeds") ".Params.featured" true }}
+  {{ if $seeds }}
+  <section class="block" id="seeds">
+    <div class="block-head"><h2>Featured seeds</h2><a class="more" href="/seeds/">Browse seeds →</a></div>
+    <div class="cards seeds">
+      {{ range first 3 $seeds }}
+      <a class="card seed-card" href="{{ .RelPermalink }}">
+        <div class="seed-grid" aria-hidden="true">
+          {{ range $c := .Params.previewColors }}<i style="background:{{ $c }}"></i>{{ end }}
+        </div>
+        <div class="seed-num">{{ .Params.seed }}</div>
+        <p>{{ .Description }}</p>
+        <span class="link">View on Seed Map →</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Trending searches -->
+  <section class="block" id="search">
+    <div class="block-head"><h2>Trending searches</h2><a class="more" href="/faq/">View trends →</a></div>
+    <div class="tags">
+      <a href="/faq/iron-farm-not-working/">Iron farm not working<span class="n">12.4K</span></a>
+      <a href="/apps/world-finders/">Find ancient city<span class="n">9.8K</span></a>
+      <a href="/apps/slime-chunk-finder/">Slime chunk finder<span class="n">8.1K</span></a>
+      <a href="/seeds/">Best seed 1.21<span class="n">7.5K</span></a>
+      <a href="/apps/nether-portal-calculator/">Nether portal calculator<span class="n">6.9K</span></a>
+      <a href="/apps/ore-finder/">Diamond ore Y level<span class="n">6.2K</span></a>
+      <a href="/guides/creeper-farm-no-cats/">Creeper farm no cats<span class="n">5.4K</span></a>
+      <a href="/guides/find-ancient-cities/">Trial chambers loot<span class="n">4.8K</span></a>
+      <a href="/guides/mending-villager-trade/">Mending villager trade<span class="n">4.1K</span></a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  {{ $faqs := where site.RegularPages "Section" "faq" }}
+  {{ if $faqs }}
+  <section class="block" id="faq">
+    <div class="block-head"><h2>Popular questions</h2><a class="more" href="/faq/">More FAQ →</a></div>
+    <div class="faq-list">
+      {{ range first 4 $faqs }}
+      <div class="faq-item">
+        <button aria-expanded="false">{{ .Title }}</button>
+        <div class="a"><p>{{ .Summary | plainify }}</p></div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Version updates -->
+  {{ $updates := where site.RegularPages "Section" "updates" }}
+  {{ if $updates }}
+  <section class="block" id="updates">
+    <div class="block-head"><h2>Version updates</h2><a class="more" href="/updates/">All updates →</a></div>
+    <div class="cards cols2">
+      {{ range first 4 $updates }}
+      <a class="card upd-card" href="{{ .RelPermalink }}">
+        <div class="ver"><span class="t">{{ .Params.badge }}</span><span class="v">{{ .Params.short }}</span></div>
+        <div class="body">
+          <div class="u-meta">{{ with .Params.tags }}{{ range . }}<span class="st {{ if eq . "New structures" }}s2{{ end }}">{{ . }}</span>{{ end }}{{ end }}</div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description }}</p>
+          <span class="link">Read update notes →</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ partial "ad.html" (dict "type" "multiplex") }}
+
+  <!-- Newsletter -->
+  <section class="newsletter" aria-label="Newsletter">
+    <h2>Get version updates &amp; new tools</h2>
+    <p>One email when a new Minecraft version drops or a new ChunkScope tool goes live. No spam, unsubscribe anytime.</p>
+    <form id="newsForm">
+      <input type="email" required placeholder="Your email address" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="fine">By subscribing you agree to our Privacy Policy. We never share your email.</p>
+  </section>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ $items := slice }}
+{{ range where site.RegularPages "Section" "apps" }}{{ $items = $items | append (dict "title" .Title "url" .RelPermalink "cat" "App") }}{{ end }}
+{{ range where site.RegularPages "Section" "guides" }}{{ $items = $items | append (dict "title" .Title "url" .RelPermalink "cat" "Guide") }}{{ end }}
+{{ range where site.RegularPages "Section" "seeds" }}{{ $items = $items | append (dict "title" .Title "url" .RelPermalink "cat" "Seed") }}{{ end }}
+{{ range where site.RegularPages "Section" "faq" }}{{ $items = $items | append (dict "title" .Title "url" .RelPermalink "cat" "FAQ") }}{{ end }}
+<script type="application/json" id="searchData">
+{{ $items | jsonify }}
+</script>
+{{ end }}

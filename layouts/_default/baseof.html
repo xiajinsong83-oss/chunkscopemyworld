@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode "en" }}">
+{{ partial "head.html" . }}
+<body>
+{{ partial "header.html" . }}
+<main>
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+<div id="toast" role="status"></div>
+<script src="/js/main.js"></script>
+{{ block "scripts" . }}{{ end }}
+</body>
+</html>

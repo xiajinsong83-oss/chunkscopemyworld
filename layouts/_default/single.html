@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="shell">
+  <div class="page-head">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      {{ with .CurrentSection }}{{ if not .IsHome }}<a href="{{ .RelPermalink }}">{{ .Title }}</a><span>›</span>{{ end }}{{ end }}
+      <span>{{ .Title }}</span>
+    </nav>
+    <h1>{{ .Title | safeHTML }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.meta }}<div class="pills" style="margin-top:14px">{{ range . }}<span class="pill">{{ . }}</span>{{ end }}</div>{{ end }}
+  </div>
+  {{ partial "ad.html" (dict "type" "leader") }}
+  <article class="panel">
+    {{ .Content }}
+  </article>
+  {{ partial "ad.html" (dict "type" "inline") }}
+</div>
+{{ end }}

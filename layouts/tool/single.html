@@ -1,0 +1,73 @@
+{{ define "main" }}
+<div class="shell">
+  <div class="page-head">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span><a href="/apps/">Apps</a><span>›</span>
+      {{ with .CurrentSection }}{{ if not .IsHome }}<a href="{{ .RelPermalink }}">{{ .Title }}</a><span>›</span>{{ end }}{{ end }}
+      <span>{{ .Title }}</span>
+    </nav>
+    <h1>{{ .Title | safeHTML }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    <div class="pills" style="margin-top:14px">
+      {{ with .Params.editions }}{{ range . }}<span class="pill">{{ . }}</span>{{ end }}{{ end }}
+      {{ with .Params.version }}<span class="pill">v{{ . }}</span>{{ end }}
+      <span class="pill">Free · No signup</span>
+    </div>
+    {{ with .Params.versions }}
+    <div class="ver-tabs" id="verTabs">
+      {{ range . }}<button data-edition="{{ . | lower }}" {{ if eq . "Java" }}class="active"{{ end }}>{{ . }}</button>{{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  {{ partial "ad.html" (dict "type" "leader") }}
+
+  <article class="panel">
+    {{ .Content }}
+  </article>
+
+  {{ partial "ad.html" (dict "type" "inline") }}
+
+  {{ $related := where .CurrentSection.Pages "RelPermalink" "ne" .RelPermalink }}
+  {{ if $related }}
+  <section class="block">
+    <div class="block-head"><h2>Related tools</h2></div>
+    <div class="cards appgrid">
+      {{ range first 6 $related }}
+      <a class="card tool-card {{ with .Params.accent }}t{{ . }}{{ end }}" href="{{ .RelPermalink }}">
+        <h3>{{ .Title }}</h3>
+        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        <span class="link">Open →</span>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ $rg := slice }}
+  {{ with .Params.relatedGuides }}
+    {{ range . }}
+      {{ $p := site.GetPage . }}
+      {{ if $p }}{{ $rg = $rg | append $p }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ if not $rg }}{{ $rg = where site.RegularPages "Section" "guides" | first 3 }}{{ end }}
+  {{ if $rg }}
+  <section class="block">
+    <div class="block-head"><h2>Related guides</h2></div>
+    <div class="cards guides">
+      {{ range $rg }}
+      <a class="card guide-card" href="{{ .RelPermalink }}">
+        <div class="thumb" style="background-image:url('{{ with .Params.image }}/img/{{ . }}{{ else }}/img/site-bg.jpg{{ end }}')"><span class="v">{{ with .Params.version }}{{ . }}{{ else }}{{ .Params.edition }}{{ end }}</span></div>
+        <div class="body"><h3>{{ .Title }}</h3><p>{{ .Description }}</p><span class="link">Read guide →</span></div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ with .Params.js }}<script src="/js/tools/{{ . }}.js"></script>{{ end }}
+{{ end }}

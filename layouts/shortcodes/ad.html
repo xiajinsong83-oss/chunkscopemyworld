@@ -1,0 +1,2 @@
+{{ $type := .Get 0 | default "inline" }}
+{{ partial "ad.html" (dict "type" $type) }}
