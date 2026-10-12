@@ -316,3 +316,17 @@ footer a:hover{color:#fff}
 .ore-biome{font-size:11.5px;font-weight:800;color:#fff;background:var(--orange);border-radius:999px;padding:2px 9px}
 .ore-line{font-size:13.5px;color:var(--ink);margin:2px 0}
 .ore-tip{font-size:13px;color:var(--muted);margin-top:8px;border-top:1px dashed var(--line);padding-top:8px}
+
+/* structure finder */
+.sf-results{display:grid;gap:8px;margin-top:12px}
+.sf-row{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--sc);border-radius:10px;padding:10px 14px;cursor:pointer;transition:.12s}
+.sf-row:hover{background:#f6faf6}
+.sf-rank{font-weight:900;font-size:15px;color:var(--sc);flex:0 0 20px;text-align:center}
+.sf-main{flex:1 1 auto}
+.sf-main b{font-size:14.5px}
+.sf-sub{font-size:12.5px;color:var(--muted)}
+.sf-copy{padding:6px 12px;border:1px solid var(--line);background:#fff;border-radius:8px;font:inherit;font-size:12px;font-weight:800;cursor:pointer;flex:0 0 auto}
+.sf-copy:hover{border-color:var(--green);color:var(--green)}
+.sf-empty{color:var(--muted);font-size:14px;padding:12px}
+#sfSelected{margin-top:8px;min-height:20px;font-weight:800}
+#sfSelected.show{color:var(--green)}
