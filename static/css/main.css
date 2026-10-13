@@ -27,7 +27,7 @@ header{
 }
 .nav{display:flex;align-items:center;gap:18px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
-.brand .mark{width:30px;height:30px;flex:none}
+.brand .mark{width:30px;height:30px;flex:none;border-radius:8px;object-fit:cover}
 .brand .word{font-family:'Press Start 2P',monospace; font-size:15px; color:#fff; white-space:nowrap; letter-spacing:.5px}
 .brand .word b{color:var(--orange-l)}
 .nav-links{display:none;margin-left:auto;gap:4px}
