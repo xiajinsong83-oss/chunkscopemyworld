@@ -10,12 +10,12 @@ html{scroll-behavior:smooth}
 body{
   font-family:'Nunito',-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;
   color:var(--ink); background:#101d14; line-height:1.6; font-size:16px;
-  background-image:url('/img/site-bg.jpg');
-  background-size:cover; background-attachment:fixed; background-position:center;
+  background-image:url('/img/site-tile.jpg');
+  background-repeat:repeat; background-size:auto;
 }
 body::before{
   content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
-  background:linear-gradient(180deg,rgba(9,20,13,.82) 0%,rgba(9,20,13,.72) 40%,rgba(13,26,17,.82) 100%);
+  background:linear-gradient(180deg,rgba(9,20,13,.55) 0%,rgba(9,20,13,.5) 40%,rgba(13,26,17,.6) 100%);
 }
 .shell{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
 img{max-width:100%}
@@ -46,7 +46,7 @@ header{
 /* ===== Hero ===== */
 .hero{
   position:relative; overflow:hidden; color:#fff;
-  background-image:url('/img/hero-bg.jpg');
+  background-image:url('/img/home-hero.jpg');
   background-size:cover; background-position:center;
   border-bottom:3px solid var(--orange);
 }
@@ -127,7 +127,8 @@ section.block{margin:34px 0}
 .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.22)}
 .card h3{font-size:17px;font-weight:800;margin:12px 0 6px;color:var(--ink)}
 .card p{font-size:14px;color:var(--muted)}
-.card .ico{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff}
+.card .ico{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden}
+.card .ico img{width:100%;height:100%;object-fit:cover;border-radius:10px}
 .card .meta{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .card .meta span{font-size:12px;font-weight:700;color:var(--green);background:#e7f1e8;border-radius:999px;padding:3px 10px}
 .card a.link,.card .link{margin-top:14px;display:inline-block;color:var(--orange);font-weight:800;font-size:14px;text-decoration:none}
@@ -221,6 +222,7 @@ footer a{color:#aebfb2;text-decoration:none;font-size:14px}
 footer a:hover{color:#fff}
 .disclaimer{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#8fa093;line-height:1.7;text-align:center}
 .copy{text-align:center;margin-top:14px;font-size:12.5px;color:#7d9182}
+.seed-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin-bottom:10px;display:block}
 
 /* ===== Page (list / single) ===== */
 .page-head{padding:44px 0 30px;color:#fff;text-align:center}
