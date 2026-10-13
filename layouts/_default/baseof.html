@@ -7,8 +7,10 @@
 {{ block "main" . }}{{ end }}
 </main>
 {{ partial "footer.html" . }}
+{{ partial "cookie-consent.html" . }}
 <div id="toast" role="status"></div>
 <script src="/js/main.js"></script>
+<script src="/js/cookie-consent.js"></script>
 {{ block "scripts" . }}{{ end }}
 </body>
 </html>

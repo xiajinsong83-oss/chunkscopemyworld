@@ -369,3 +369,16 @@ a.sf-copy:hover{border-color:var(--green);color:var(--green);background:#f2faf2}
 .tool-result canvas{max-width:100%;height:auto;display:block;margin:10px 0;border:1px solid var(--line,#e3dfd2);border-radius:8px}
 .hm-clim{color:var(--muted,#66706a);font-size:12px}
 .hm-hint{color:#9a6b6b;font-size:11px}
+
+/* Cookie consent bar (white, bottom-fixed) */
+.cookie-consent{position:fixed;left:0;right:0;bottom:0;z-index:1200;background:#ffffff;border-top:1px solid #e2e8f0;box-shadow:0 -4px 24px rgba(15,23,42,.10);padding:14px 20px;transition:opacity .4s ease,transform .4s ease}
+.cookie-consent-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cookie-consent-text{flex:1 1 320px;min-width:0;display:flex;align-items:flex-start;gap:12px;color:#334155;font-size:14px;line-height:1.55}
+.cookie-icon{flex:none;margin-top:1px}
+.cookie-consent-text p{margin:0}
+.cookie-consent-text a{color:#2563eb;text-decoration:underline;font-weight:600}
+.cookie-accept{flex:none;background:#e8590c;color:#fff;font-weight:800;font-size:14px;border:0;border-radius:10px;padding:11px 28px;cursor:pointer;transition:background .15s,transform .1s}
+.cookie-accept:hover{background:#d9480f}
+.cookie-accept:active{transform:translateY(1px)}
+.cookie-hidden{opacity:0;pointer-events:none;transform:translateY(14px)}
+@media (max-width:600px){.cookie-consent-inner{gap:10px}.cookie-accept{width:100%}}
