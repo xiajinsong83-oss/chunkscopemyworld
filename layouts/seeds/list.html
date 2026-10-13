@@ -64,11 +64,11 @@
   if (!gallery) return;
   var cards = Array.prototype.slice.call(gallery.querySelectorAll('.seed-card'));
 
-  /* build tag filter pills from the collected tag list */
+  /* build tag filter pills — cap at 12 to keep the bar tidy */
   var listEl = document.getElementById('seedTagList');
   var pills = document.getElementById('seedTagPills');
   if (pills && listEl) {
-    (listEl.getAttribute('data-tags') || '').split(',').forEach(function (t) {
+    (listEl.getAttribute('data-tags') || '').split(',').slice(0, 12).forEach(function (t) {
       t = t.trim();
       if (!t) return;
       var b = document.createElement('button');

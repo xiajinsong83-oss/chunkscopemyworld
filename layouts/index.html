@@ -186,16 +186,6 @@
 
   {{ partial "ad.html" (dict "type" "multiplex") }}
 
-  <!-- Newsletter -->
-  <section class="newsletter" aria-label="Newsletter">
-    <h2>Get version updates &amp; new tools</h2>
-    <p>One email when a new Minecraft version drops or a new ChunkScope tool goes live. No spam, unsubscribe anytime.</p>
-    <form id="newsForm">
-      <input type="email" required placeholder="Your email address" aria-label="Email address">
-      <button type="submit">Subscribe</button>
-    </form>
-    <p class="fine">By subscribing you agree to our Privacy Policy. We never share your email.</p>
-  </section>
 </div>
 {{ end }}
 
@@ -207,5 +197,46 @@
 {{ range where site.RegularPages "Section" "faq" }}{{ $items = $items | append (dict "title" .Title "url" .RelPermalink "cat" "FAQ") }}{{ end }}
 <script type="application/json" id="searchData">
 {{ $items | jsonify }}
+</script>
+<script>
+(function () {
+  var input = document.getElementById('searchInput');
+  var sug = document.getElementById('suggest');
+  var form = document.getElementById('searchForm');
+  if (!input || !form) return;
+  function data() { var el = document.getElementById('searchData'); if (!el) return []; try { return JSON.parse(el.textContent); } catch (e) { return []; } }
+  function matches(q) { return data().filter(function (t) { return (t.title + ' ' + t.cat).toLowerCase().indexOf(q) !== -1; }); }
+  function show(list) {
+    if (!sug) return;
+    sug.innerHTML = '';
+    if (!list.length) {
+      var d = document.createElement('div'); d.className = 'none';
+      d.textContent = 'No matches — try "seed map", "iron farm" or "enchant"';
+      sug.appendChild(d);
+    } else {
+      list.slice(0, 8).forEach(function (t) {
+        var a = document.createElement('a'); a.href = t.url;
+        var tg = document.createElement('span'); tg.className = 'tag'; tg.textContent = t.cat;
+        var tx = document.createElement('span'); tx.textContent = t.title;
+        a.appendChild(tg); a.appendChild(tx); sug.appendChild(a);
+      });
+    }
+    sug.classList.add('open');
+  }
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    if (!q) { if (sug) sug.classList.remove('open'); return; }
+    show(matches(q));
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var q = input.value.trim().toLowerCase();
+    if (!q) { showToast && showToast('Type a tool or guide name to search'); return; }
+    var h = matches(q);
+    if (h.length) { window.location.href = h[0].url; return; }
+    show(h);
+  });
+  document.addEventListener('click', function (e) { if (sug && !e.target.closest('.hero-search')) sug.classList.remove('open'); });
+})();
 </script>
 {{ end }}
