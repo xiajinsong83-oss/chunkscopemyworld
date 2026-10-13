@@ -9,10 +9,10 @@
     var name = ((document.getElementById('neName') || {}).value || '').trim();
     var lore = ((document.getElementById('neLore') || {}).value || '').trim();
     var parts = [];
-    if (name) parts.push("custom_name='{\\\"text\\\":\\\"" + name.replace(/"/g, '') + "\\\",\\\"italic\\\":false}'");
+    if (name) parts.push("custom_name='{\"text\":\"" + name.replace(/"/g, '') + "\",\"italic\":false}'");
     if (lore) {
       var lines = lore.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
-      var loreArr = lines.map(function (l) { return '{\\\"text\\\":\\\"' + l.replace(/"/g, '') + '\\\"}'; }).join(',');
+      var loreArr = lines.map(function (l) { return '{\"text\":\"' + l.replace(/"/g, '') + '\"}'; }).join(',');
       parts.push("lore=['" + loreArr + "']");
     }
     var cmd = '/give @p ' + item + (parts.length ? '[' + parts.join(',') + ']' : '') + ' 1';
