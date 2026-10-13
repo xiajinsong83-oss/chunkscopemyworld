@@ -9,10 +9,29 @@
   </div>
   {{ partial "ad.html" (dict "type" "leader") }}
   {{ if .Content }}<div class="panel">{{ .Content }}</div>{{ end }}
-  <div class="seed-gallery">
+
+  <div class="seed-filter" id="seedFilter">
+    <div class="seed-filter-group">
+      <button class="sf-pill active" data-filter="*">All</button>
+      <button class="sf-pill" data-filter="edition:Java">Java</button>
+      <button class="sf-pill" data-filter="edition:Bedrock">Bedrock</button>
+    </div>
+    <div class="seed-filter-group" id="seedTagPills"></div>
+  </div>
+
+  <div class="seed-gallery" id="seedGallery">
+    {{ $tags := slice }}
+    {{ range .Pages }}
+      {{ if ne .Params.hidden true }}
+        {{ range .Params.tags }}{{ $tags = $tags | append (lower .) }}{{ end }}
+      {{ end }}
+    {{ end }}
+    {{ $tags = $tags | uniq }}
+    <span class="seed-tags-json" id="seedTagList" data-tags="{{ delimit $tags "," }}"></span>
+
     {{ range .Pages }}
     {{ if ne .Params.hidden true }}
-    <article class="seed-card">
+    <article class="seed-card" data-edition="{{ with .Params.edition }}{{ . }}{{ end }}" data-tags="{{ range .Params.tags }}{{ lower . }} {{ end }}" data-seed="{{ with .Params.seed }}{{ . }}{{ end }}">
       <a class="seed-swatch" href="{{ .RelPermalink }}" aria-label="{{ .Title }}"
         {{ with .Params.previewColors }}style="background:linear-gradient(135deg,{{ range $i, $c := . }}{{ if $i }},{{ end }}{{ $c }}{{ end }})"{{ end }}>
         <span class="seed-swatch-tag">{{ with .Params.edition }}{{ . }}{{ end }}</span>
@@ -25,6 +44,7 @@
           {{ with .Params.tags }}{{ range first 3 . }}<span>{{ . }}</span>{{ end }}{{ end }}
         </div>
         <div class="seed-actions">
+          <button class="run small" type="button" data-copy data-seed="{{ with .Params.seed }}{{ . }}{{ end }}">Copy</button>
           <a class="run small" href="/apps/seed-map/#seed={{ with .Params.seed }}{{ . }}{{ end }}&layers=s">Open in Seed Map</a>
           <a class="link" href="{{ .RelPermalink }}">Read →</a>
         </div>
@@ -35,4 +55,62 @@
   </div>
   {{ partial "ad.html" (dict "type" "multiplex") }}
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function () {
+  var gallery = document.getElementById('seedGallery');
+  if (!gallery) return;
+  var cards = Array.prototype.slice.call(gallery.querySelectorAll('.seed-card'));
+
+  /* build tag filter pills from the collected tag list */
+  var listEl = document.getElementById('seedTagList');
+  var pills = document.getElementById('seedTagPills');
+  if (pills && listEl) {
+    (listEl.getAttribute('data-tags') || '').split(',').forEach(function (t) {
+      t = t.trim();
+      if (!t) return;
+      var b = document.createElement('button');
+      b.className = 'sf-pill';
+      b.setAttribute('data-filter', 'tag:' + t);
+      b.textContent = t.charAt(0).toUpperCase() + t.slice(1);
+      pills.appendChild(b);
+    });
+  }
+
+  function matches(card, f) {
+    if (!f || f === '*') return true;
+    if (f.indexOf('edition:') === 0) return (card.getAttribute('data-edition') || '').toLowerCase() === f.slice(8).toLowerCase();
+    if (f.indexOf('tag:') === 0) return (' ' + (card.getAttribute('data-tags') || '') + ' ').indexOf(' ' + f.slice(4) + ' ') >= 0;
+    return true;
+  }
+
+  function apply(filter, clicked) {
+    cards.forEach(function (c) { c.style.display = matches(c, filter) ? '' : 'none'; });
+    if (clicked) {
+      var group = clicked.parentNode.querySelectorAll('.sf-pill');
+      group.forEach(function (b) { b.classList.remove('active'); });
+      clicked.classList.add('active');
+    }
+  }
+
+  document.querySelectorAll('#seedFilter .sf-pill').forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-filter'), b); });
+  });
+
+  /* copy seed to clipboard */
+  var toast = document.getElementById('toast');
+  gallery.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copy]');
+    if (!b) return;
+    var s = b.getAttribute('data-seed') || '';
+    function done() { toast.textContent = 'Seed ' + s + ' copied'; toast.classList.add('show'); setTimeout(function () { toast.classList.remove('show'); }, 1800); }
+    function fallback(v) { var ta = document.createElement('textarea'); ta.value = v; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (err) {} document.body.removeChild(ta); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(s).then(done, function () { fallback(s); done(); });
+    } else { fallback(s); done(); }
+  });
+})();
+</script>
 {{ end }}

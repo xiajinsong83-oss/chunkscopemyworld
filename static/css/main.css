@@ -347,6 +347,12 @@ a.sf-copy:hover{border-color:var(--green);color:var(--green);background:#f2faf2}
 .seed-meta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;font-size:11px;color:var(--muted,#66706a)}
 .seed-num{font-weight:600;color:var(--green,#2f6b3a)}
 .seed-actions{display:flex;align-items:center;gap:10px}
+.seed-filter{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 16px}
+.seed-filter-group{display:flex;flex-wrap:wrap;gap:6px}
+.sf-pill{border:1px solid var(--line,#dfd9ca);background:#fff;color:var(--muted,#5b655e);border-radius:999px;padding:5px 12px;font-size:12.5px;cursor:pointer;transition:all .12s}
+.sf-pill:hover{border-color:var(--green,#2f6b3a)}
+.sf-pill.active{background:var(--green,#2f6b3a);border-color:var(--green,#2f6b3a);color:#fff}
+.seed-tags-json{display:none}
 
 /* Structures index cards */
 .struct-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:0 0 24px}
@@ -354,3 +360,8 @@ a.sf-copy:hover{border-color:var(--green);color:var(--green);background:#f2faf2}
 .struct-card h3{margin:0 0 4px;font-size:15px}
 .struct-card p{margin:0 0 6px;font-size:13px;color:var(--muted,#66706a)}
 .struct-card .link{font-size:12px}
+
+/* Heightmap Reader */
+.tool-result canvas{max-width:100%;height:auto;display:block;margin:10px 0;border:1px solid var(--line,#e3dfd2);border-radius:8px}
+.hm-clim{color:var(--muted,#66706a);font-size:12px}
+.hm-hint{color:#9a6b6b;font-size:11px}
