@@ -4,6 +4,8 @@ description: "What ChunkScope is, who builds it, and how to contact us."
 ---
 # About ChunkScope
 
+![ChunkScope — explore Minecraft worlds](/img/farm-village-clean.jpg)
+
 ChunkScope is a free collection of Minecraft tools and guides — seed maps, structure finders, ore locators, farm & redstone calculators, creative editors and version-locked tutorials. Everything runs in your browser, no signup, no downloads.
 
 ## What we do differently

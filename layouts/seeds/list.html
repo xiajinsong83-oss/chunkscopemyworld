@@ -7,6 +7,7 @@
     <h1>{{ .Title | safeHTML }}</h1>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
   </div>
+  <div class="seed-banner"><img src="/img/farm-village-clean.jpg" alt="Explore Minecraft world seeds — villages, biomes, ancient cities and more"></div>
   {{ partial "ad.html" (dict "type" "leader") }}
   {{ if .Content }}<div class="panel">{{ .Content }}</div>{{ end }}
 

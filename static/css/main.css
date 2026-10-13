@@ -223,6 +223,8 @@ footer a:hover{color:#fff}
 .disclaimer{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#8fa093;line-height:1.7;text-align:center}
 .copy{text-align:center;margin-top:14px;font-size:12.5px;color:#7d9182}
 .seed-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin-bottom:10px;display:block}
+.seed-banner{border-radius:var(--r);overflow:hidden;margin:0 0 22px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.seed-banner img{width:100%;aspect-ratio:21/6;object-fit:cover;display:block}
 
 /* ===== Page (list / single) ===== */
 .page-head{padding:44px 0 30px;color:#fff;text-align:center}

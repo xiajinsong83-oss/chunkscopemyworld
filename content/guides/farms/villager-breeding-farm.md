@@ -3,12 +3,12 @@ title: "Villager Breeding Farm: Infinite Villagers & the Trading Hall"
 description: "A simple, reliable villager breeder plus a trading hall layout — beds, doors and the job-block economy explained for 1.21."
 edition: "Java & Bedrock"
 version: "1.21.5"
-image: "village.jpg"
+image: "farm-village-clean.jpg"
 featured: true
 tags: ["Villagers", "Farms", "Trading", "Breeding"]
 relatedTools: ["/apps/farm-calculator/"]
 ---
-![Villager breeding](/img/village.jpg)
+![Villager breeding](/img/farm-village-clean.jpg)
 
 Villagers are the best renewable resource in the game — a breeding pair turns into a self-sustaining population that supplies enchanted books, tools and emeralds. Breeding only needs **beds, food and a working villager**.
 
