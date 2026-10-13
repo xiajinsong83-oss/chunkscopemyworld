@@ -46,7 +46,7 @@ header{
 /* ===== Hero ===== */
 .hero{
   position:relative; overflow:hidden; color:#fff;
-  background-image:url('/img/home-hero.jpg');
+  background-image:url('/img/hero-bg.jpg');
   background-size:cover; background-position:center;
   border-bottom:3px solid var(--orange);
 }
