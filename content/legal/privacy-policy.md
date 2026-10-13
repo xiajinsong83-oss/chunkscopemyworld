@@ -19,10 +19,34 @@ ChunkScope runs entirely in your browser. We collect **no personal data** unless
 | Anonymous usage analytics (if enabled) | Improve the site | Legitimate interest |
 | Ad-related cookies | Serve relevant ads | Consent via cookie banner |
 
-## Cookies
+## Cookie Policy
 
-- **Google AdSense** may use cookies to personalize ads. You can opt out at [Google's Ads Settings](https://adssettings.google.com).
-- We do **not** use tracking pixels, fingerprinting or cross-site tracking beyond advertising partners' standard behavior.
+ChunkScope uses cookies to keep the site working and to serve relevant advertising through **Google AdSense**. We never collect or store personal data ourselves.
+
+### Types of cookies we use
+
+| Type | Purpose | Consent |
+|---|---|---|
+| **Essential cookies** | Keep the site functional (e.g. remembering your cookie choice, UI preferences). These are required for the site to work. | Always on |
+| **Advertising cookies** | Placed by Google AdSense to show relevant ads and measure ad performance. | Only placed with your consent (via the cookie banner) |
+
+### How consent works
+
+When you first visit, a **cookie banner** appears. Essential cookies are always enabled; advertising cookies are only placed after you click **Accept**. If you decline, no advertising cookies are set and ads, where shown, will be non-personalized.
+
+### Third-party advertising (Google AdSense)
+
+AdSense, operated by Google, may use cookies to serve ads based on your prior visits to this and other sites. Google's use of advertising cookies enables it and its partners to serve personalized ads to you. You can opt out of personalized advertising at [Google's Ads Settings](https://adssettings.google.com) or via [aboutads.info](https://www.aboutads.info) (US) / [youronlinechoices.eu](https://www.youronlinechoices.eu) (EU/UK).
+
+We do **not** use tracking pixels, fingerprinting or cross-site tracking beyond advertising partners' standard behavior. Third-party partners have their own privacy policies that we do not control.
+
+### Managing cookies in your browser
+
+You can block or delete cookies through your browser settings at any time. Note that blocking essential cookies may affect how the site functions.
+
+### Consent record
+
+Your cookie choice is stored locally in your browser (localStorage). You can reset it by clearing site data for this domain, after which the banner will reappear.
 
 ## Your rights
 
