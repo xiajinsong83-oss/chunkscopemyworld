@@ -4,7 +4,7 @@ description: "A woodland mansion's generation point sits 5 chunks from spawn (bl
 seed: "13015"
 edition: "Java"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#3b6b3b", "#6b9b5b", "#2c4a2c", "#8a6a4a"]
 tags: ["Woodland mansion", "Spawn", "Loot", "Dark forest"]
 ---

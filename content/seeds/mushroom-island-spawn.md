@@ -4,7 +4,7 @@ description: "Spawn right on a mushroom island, with a plains village 400 blocks
 seed: "845712390"
 edition: "Java"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#3e8e4f", "#8b5a2b", "#3e8e4f", "#d97706"]
 tags: ["Mushroom", "Spawn", "Village"]
 ---

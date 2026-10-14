@@ -4,7 +4,7 @@ description: "A shipwreck six chunks off spawn (block 8,104) on the coast — tr
 seed: "10002"
 edition: "Java"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#5b8fb9", "#8b5a2b", "#3e8e4f", "#d9a066"]
 tags: ["Shipwreck", "Ocean", "Spawn", "Loot"]
 ---

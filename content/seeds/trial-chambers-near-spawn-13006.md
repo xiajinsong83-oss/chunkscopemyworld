@@ -4,7 +4,7 @@ description: "Trial chambers spawn 4 chunks from world spawn (block 56, 56) — 
 seed: "13006"
 edition: "Java"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#7a5b3b", "#9a7b4b", "#4a3a2a", "#c9a86a"]
 tags: ["Trial chambers", "Spawn", "Breeze", "Loot"]
 ---
