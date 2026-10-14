@@ -1,0 +1,35 @@
+name: Daily auto-updates
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 05:00 UTC every day
+  workflow_dispatch: {}   # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  auto-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect new Minecraft version / snapshot
+        run: python3 scripts/daily-check-version.py
+
+      - name: Rotate featured seeds
+        run: python3 scripts/rotate-featured-seeds.py
+
+      - name: Commit & push changes
+        run: |
+          if git status --porcelain | grep -q .; then
+            git config user.name "chunkscope-bot"
+            git config user.email "actions@github.com"
+            git add content/
+            git commit -m "Daily auto-update: new versions + featured seeds"
+            git push
+            echo "Changes committed & pushed."
+          else
+            echo "No changes today — nothing to commit."
+          fi
