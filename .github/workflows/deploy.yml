@@ -32,4 +32,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=chunkscope --commit-dirty=true
+          command: pages deploy public --project-name=chunkscopemyworld --commit-dirty=true
