@@ -4,7 +4,7 @@ description: "The ancient city's generation point is right at world spawn (chunk
 seed: "13424"
 edition: "Java"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#3b2b4f", "#1d1330", "#6d5a8a", "#2a1e3a"]
 tags: ["Ancient city", "Spawn", "Warden", "Deep dark"]
 ---

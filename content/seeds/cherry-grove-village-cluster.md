@@ -4,7 +4,7 @@ description: "Three villages inside one cherry grove valley, plus a trial chambe
 seed: "-734092518"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#d97706", "#3e8e4f", "#d97706", "#8b5a2b"]
 tags: ["Cherry", "Villages", "Trial chambers"]
 ---
