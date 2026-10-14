@@ -75,7 +75,7 @@
       {{ range first 6 $featured }}
       <a class="card tool-card {{ with .Params.accent }}t{{ . }}{{ end }}" href="{{ .RelPermalink }}">
         <div class="ico">
-          {{ if eq .Params.accent 2 }}
+          {{ if .Params.icon }}<img src="{{ .Params.icon }}" alt="{{ .Title }}">{{ else if eq .Params.accent 2 }}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
           {{ else if eq .Params.accent 3 }}
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>

@@ -1,5 +1,6 @@
 ---
 title: "Banner Editor"
+icon: "/img/app-icons/banner-editor.jpg"
 description: "Design Minecraft banners and shields visually — pick patterns and colors, preview the result, copy the banner command."
 type: tool
 editions: ["Java", "Bedrock"]

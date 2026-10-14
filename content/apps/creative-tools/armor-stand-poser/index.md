@@ -1,5 +1,6 @@
 ---
 title: "Armor Stand Poser"
+icon: "/img/app-icons/armor-stand-poser.jpg"
 description: "Build a /summon command with armor-stand poses — pick a preset (T-pose, salute, sit) or set custom arm and leg angles."
 type: tool
 editions: ["Java"]

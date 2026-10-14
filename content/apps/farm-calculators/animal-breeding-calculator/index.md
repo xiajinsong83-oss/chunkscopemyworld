@@ -1,5 +1,6 @@
 ---
 title: "Animal Breeding Calculator"
+icon: "/img/app-icons/animal-breeding-calculator.jpg"
 description: "Work out how much food you need to grow your herd, and how long baby animals take to mature — cows, sheep, pigs, chickens and rabbits."
 type: tool
 editions: ["Java", "Bedrock"]

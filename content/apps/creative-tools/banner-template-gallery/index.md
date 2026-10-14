@@ -1,5 +1,6 @@
 ---
 title: "Banner Template Gallery"
+icon: "/img/app-icons/banner-template-gallery.jpg"
 description: "Classic Minecraft banner designs — creeper face, skull, flower, tri-color stripes and more — with pattern lists and a link to customize each in the Banner Editor."
 type: tool
 editions: ["Java & Bedrock"]

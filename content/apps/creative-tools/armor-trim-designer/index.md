@@ -1,5 +1,6 @@
 ---
 title: "Armor Trim Designer"
+icon: "/img/app-icons/armor-trim-designer.jpg"
 description: "Generate a /give command with the 1.20 armor-trim component — pick armor, trim material and pattern for fully decorated gear."
 type: tool
 editions: ["Java"]

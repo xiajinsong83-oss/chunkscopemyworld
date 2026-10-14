@@ -1,5 +1,6 @@
 ---
 title: "Bastion Finder"
+icon: "/img/app-icons/bastion-finder.jpg"
 description: "Locate bastion remnants — the piglin gold-rich structures with netherite debris — and a /locate command to reach one."
 type: tool
 editions: ["Java", "Bedrock"]
