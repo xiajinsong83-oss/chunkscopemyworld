@@ -36,28 +36,28 @@
     <div class="block-head"><h2>Tools by category</h2><a class="more" href="/apps/">View all apps →</a></div>
     <div class="cards cat">
       <a class="card tool-card" href="/apps/world-finders/">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg></div>
+        <div class="ico"><img src="/img/home-tool-world.jpg" alt="World finders"></div>
         <h3>World &amp; Chunk Finders</h3>
         <p>Seed maps, structure finders, ore locators and biome tools — 30+ apps to explore any seed.</p>
         <span class="meta"><span>30+ apps</span><span>Seed Map</span><span>Ore Finder</span></span>
         <span class="link">Browse finders →</span>
       </a>
       <a class="card tool-card t2" href="/apps/farm-calculators/">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg></div>
+        <div class="ico"><img src="/img/home-tool-farm.jpg" alt="Farm and redstone calculators"></div>
         <h3>Farm &amp; Redstone Calculators</h3>
         <p>Exclusive calculators: farm output, spawn rates, block counts, item sorters and redstone logic.</p>
         <span class="meta"><span>Exclusive</span><span>Farm Output</span><span>Redstone</span></span>
         <span class="link">Calculate →</span>
       </a>
       <a class="card tool-card t3" href="/apps/creative-tools/">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/><path d="M3 18l9 5 9-5"/></svg></div>
+        <div class="ico"><img src="/img/home-tool-creative.jpg" alt="Crafting and creative tools"></div>
         <h3>Crafting &amp; Creative Tools</h3>
         <p>Enchantment calculators, potion builders, banner and shield editors, fireworks and more.</p>
         <span class="meta"><span>11 apps</span><span>Enchant</span><span>Banners</span></span>
         <span class="link">Craft →</span>
       </a>
       <a class="card tool-card t4" href="/apps/command-tools/">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg></div>
+        <div class="ico"><img src="/img/home-tool-command.jpg" alt="Command and data tools"></div>
         <h3>Command &amp; Data Tools</h3>
         <p>Command generators, /tellraw editors, item IDs, loot tables, NBT and server MOTD builders.</p>
         <span class="meta"><span>10 apps</span><span>/tellraw</span><span>Loot</span></span>
@@ -118,10 +118,10 @@
     <div class="block-head"><h2>Featured seeds</h2><a class="more" href="/seeds/">Browse seeds →</a></div>
     <div class="cards seeds">
       {{ range first 3 $seeds }}
+      {{ $simg := "/img/home-seed-village.jpg" }}
+      {{ if strings.Contains .Title "Ancient" }}{{ $simg = "/img/home-seed-ancient.jpg" }}{{ else if strings.Contains .Title "Mushroom" }}{{ $simg = "/img/home-seed-mushroom.jpg" }}{{ end }}
       <a class="card seed-card" href="{{ .RelPermalink }}">
-        <div class="seed-grid" aria-hidden="true">
-          {{ range $c := .Params.previewColors }}<i style="background:{{ $c }}"></i>{{ end }}
-        </div>
+        <img class="seed-thumb" src="{{ $simg }}" alt="{{ .Title }}">
         <div class="seed-num">{{ .Params.seed }}</div>
         <p>{{ .Description }}</p>
         <span class="link">View on Seed Map →</span>
