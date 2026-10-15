@@ -4,7 +4,7 @@ description: "A desert pyramid one chunk from spawn (block 24,24) with a village
 seed: "13620"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#e8d5a3", "#d97706", "#8b5a2b", "#f4e8c1"]
 tags: ["Desert Pyramid", "Spawn", "Loot"]
 ---

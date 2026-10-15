@@ -4,7 +4,7 @@ description: "Ancient city directly beneath spawn on Bedrock — 3 swift sneak b
 seed: "1935026641"
 edition: "Bedrock"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#16231a", "#3e8e4f", "#16231a", "#d97706"]
 tags: ["Ancient City", "Bedrock", "Swift Sneak"]
 ---
