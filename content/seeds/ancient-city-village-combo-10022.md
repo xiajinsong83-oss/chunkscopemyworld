@@ -4,7 +4,7 @@ description: "Both an ancient city (block 8, 56) and a village (block 88, 40) sp
 seed: "10022"
 edition: "Java"
 version: "1.21.5"
-featured: true
+featured: false
 previewColors: ["#3b2b4f", "#6d8a5b", "#2a1e3a", "#8a5b3b"]
 tags: ["Ancient city", "Village", "Spawn", "Combo"]
 ---
