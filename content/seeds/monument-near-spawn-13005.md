@@ -4,7 +4,7 @@ description: "An ocean monument's generation point is 6 chunks from spawn (block
 seed: "13005"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#2a6a7a", "#5b9aaa", "#1d4a5a", "#9ad1e1"]
 tags: ["Ocean monument", "Spawn", "Prismarine", "Sponge"]
 ---
