@@ -4,7 +4,7 @@ description: "A pillager outpost right on the spawn point (block 8,8) with a vil
 seed: "17215"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#3e8e4f", "#8b5a2b", "#6b7280", "#d97706"]
 tags: ["Pillager Outpost", "Spawn", "Structure"]
 ---
