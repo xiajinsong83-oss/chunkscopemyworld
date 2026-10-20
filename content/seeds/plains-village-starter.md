@@ -4,7 +4,7 @@ description: "Classic plains village with a blacksmith and 4 farmhouses right at
 seed: "408392176"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#8b5a2b", "#3e8e4f", "#8b5a2b", "#d97706"]
 tags: ["Village", "Spawn", "Blacksmith"]
 ---
