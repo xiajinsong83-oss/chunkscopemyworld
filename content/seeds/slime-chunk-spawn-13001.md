@@ -4,7 +4,7 @@ description: "Four slime chunks ring world spawn within 6 chunks — a full slim
 seed: "13001"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#7dd37d", "#5baa5b", "#3b7a3b", "#d1f5d1"]
 tags: ["Slime chunks", "Spawn", "Farm", "Sticky pistons"]
 ---
