@@ -4,7 +4,7 @@ description: "A snowy igloo three chunks from spawn (block 56,24) with a basemen
 seed: "10012"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#b8d8e8", "#8b5a2b", "#ffffff", "#5b8fb9"]
 tags: ["Igloo", "Snowy", "Spawn", "Villager"]
 ---
