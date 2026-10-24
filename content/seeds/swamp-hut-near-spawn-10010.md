@@ -4,7 +4,7 @@ description: "A witch's swamp hut three chunks from spawn (block 56,24) — a ca
 seed: "10010"
 edition: "Java"
 version: "1.21.5"
-featured: false
+featured: true
 previewColors: ["#3e8e4f", "#8b5a2b", "#5b8fb9", "#d97706"]
 tags: ["Swamp Hut", "Witch", "Spawn", "Swamp"]
 ---
